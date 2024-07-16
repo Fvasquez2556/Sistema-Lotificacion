@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promesas de Compra</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Promesas de Compra</h1>
+        <form id="promesasForm">
+            <input type="text" id="lote" placeholder="Lote">
+            <input type="text" id="comprador" placeholder="Comprador">
+            <input type="date" id="fecha" placeholder="Fecha">
+            <input type="number" id="monto" placeholder="Monto">
+            <button type="submit">Agregar Promesa</button>
+        </form>
+        <div id="promesasList">
+            <!-- Lista de promesas se renderiza aquí -->
+        </div>
+    </div>
+    <script src="promesas.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Datos</title>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .arrow {
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .dropdown:hover .arrow {
+            transform: rotate(180deg);
+        }
+
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form id="dataForm" action="/submit" method="post">
+        <!-- Nuevos campos agregados -->
+        <label for="nombreLotificacion">Nombre de la Lotificación:</label>
+        <input type="text" id="nombreLotificacion" name="nombreLotificacion" required><br><br>
+        
+        <label for="direccionOficina">Dirección de la Oficina:</label>
+        <div class="dropdown">
+            <button type="button" class="button">
+                <span>Seleccione una opción</span>
+                <span class="arrow">▼</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#" onclick="selectOffice('6 avenida 7-02 zona1, Retalhuleu')">6 avenida 7-02 zona1, Retalhuleu</a>
+                <a href="#" onclick="selectOffice('Aldea El Progreso, Mazatenango, Suchitepequez')">Aldea El Progreso, Mazatenango, Suchitepequez</a>
+            </div>
+        </div>
+        <input type="text" id="direccionOficina" name="direccionOficina" required readonly><br><br>
+        
+        <label for="numLote">Número de Lote:</label>
+        <input type="text" id="numLote" name="numLote" required><br><br>
+        
+        <label for="dirLotificacion">Dirección de Lotificación:</label>
+        <input type="text" id="dirLotificacion" name="dirLotificacion" required><br><br>
+        
+        <!-- Campos originales del formulario -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required><br><br>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" required><br><br>
+        
+        <label for="dpi">DPI:</label>
+        <input type="text" id="dpi" name="dpi" required><br><br>
+        
+        <label for="extendidoEn">Extendido en:</label>
+        <input type="text" id="extendidoEn" name="extendidoEn" required><br><br>
+        
+        <label for="nit">N.I.T:</label>
+        <input type="text" id="nit" name="nit" required><br><br>
+        
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="text" id="fechaNacimiento" name="fechaNacimiento" required><br><br>
+        
+        <label for="edad">Edad:</label>
+        <input type="text" id="edad" name="edad" required><br><br>
+        
+        <label for="nacionalidad">Nacionalidad:</label>
+        <input type="text" id="nacionalidad" name="nacionalidad" required><br><br>
+        
+        <label for="estadoCivil">Estado Civil:</label>
+        <input type="text" id="estadoCivil" name="estadoCivil" required><br><br>
+        
+        <label for="dependientes">Número de personas que dependen del solicitante:</label>
+        <input type="text" id="dependientes" name="dependientes" required><br><br>
+        
+        <label for="profesion">Profesión o Actividad a la que se dedica:</label>
+        <input type="text" id="profesion" name="profesion" required><br><br>
+        
+        <label for="empresa">Empresa para la que trabaja:</label>
+        <input type="text" id="empresa" name="empresa" required><br><br>
+        
+        <label for="dirEmpresa">Dirección de la Empresa:</label>
+        <input type="text" id="dirEmpresa" name="dirEmpresa" required><br><br>
+        
+        <label for="numTrabajo">Teléfono del Trabajo:</label>
+        <input type="text" id="numTrabajo" name="numTrabajo" required><br><br>
+        
+        <label for="puesto">Puesto que Desempeña:</label>
+        <input type="text" id="puesto" name="puesto" required><br><br>
+        
+        <label for="tiempoTrabajo">Tiempo de Trabajo:</label>
+        <input type="text" id="tiempoTrabajo" name="tiempoTrabajo" required><br><br>
+        
+        <label for="salario">Ingreso Mensual:</label>
+        <input type="text" id="salario" name="salario" required><br><br>
+        
+        <label for="extra">Otros Ingresos:</label>
+        <input type="text" id="extra" name="extra" required><br><br>
+        
+        <!-- Campos nuevos del Gestor o Beneficiario -->
+        <label for="nomGestor">Nombre del Gestor o Beneficiario:</label>
+        <input type="text" id="nomGestor" name="nomGestor" required><br><br>
+        
+        <label for="dirGestor">Dirección del Gestor o Beneficiario:</label>
+        <input type="text" id="dirGestor" name="dirGestor" required><br><br>
+        
+        <label for="numGestor">Teléfono del Gestor o Beneficiario:</label>
+        <input type="text" id="numGestor" name="numGestor" required><br><br>
+        
+        <label for="dpiGestor">DPI del Gestor o Beneficiario:</label>
+        <input type="text" id="dpiGestor" name="dpiGestor" required><br><br>
+        
+        <label for="extendDPIGest">Extendido en (Gestor):</label>
+        <input type="text" id="extendDPIGest" name="extendDPIGest" required><br><br>
+        
+        <label for="fechNacGest">Fecha de Nacimiento (Gestor):</label>
+        <input type="text" id="fechNacGest" name="fechNacGest" required><br><br>
+        
+        <label for="añosGest">Edad (Gestor):</label>
+        <input type="text" id="añosGest" name="añosGest" required><br><br>
+        
+        <label for="nacGest">Nacionalidad (Gestor):</label>
+        <input type="text" id="nacGest" name="nacGest" required><br><br>
+        
+        <input type="submit" value="Descargar Documento">
+    </form>
+
+    <script>
+        function selectOffice(address) {
+            document.getElementById('direccionOficina').value = address;
+        }
+    </script>
+</body>
+</html>

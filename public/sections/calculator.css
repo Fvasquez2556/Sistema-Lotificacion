@@ -1,0 +1,87 @@
+/* Estilos para la calculadora de créditos */
+#calculator {
+    background: white;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 800px;  /* Aumentar el tamaño máximo */
+    width: 100%;
+    text-align: center;
+    margin: 2em auto;
+}
+
+#calculator h2 {
+    margin-bottom: 1em;
+    color: #00796b;
+}
+
+#calculator form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 1em 0;
+}
+
+#calculator form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #00796b;
+    text-align: left;
+}
+
+#calculator form input {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+#calculator button {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+#calculator button:hover {
+    background-color: #004d40;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+    max-height: 400px;  /* Altura máxima para el contenedor de la tabla */
+    overflow-y: auto;  /* Añadir scroll vertical */
+    margin-top: 1em;
+}
+
+#amortizationTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#amortizationTable th, #amortizationTable td {
+    border: 1px solid #ddd;
+    padding: 0.75em;
+    text-align: left;
+}
+
+#amortizationTable th {
+    background-color: #32cd32;  /* Cambiar a un tono de verde más claro */
+    color: white;
+}
+
+#amortizationTable tr:nth-child(even) {
+    background-color: #e0f2f1;  /* Añadir un fondo alternativo para las filas pares */
+}
+
+#amortizationTable tr:hover {
+    background-color: #b2dfdb;  /* Cambiar el fondo al pasar el ratón */
+}

@@ -1,0 +1,64 @@
+<!-- public/clientes.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Clientes</h1>
+    <form id="clienteForm">
+        <input type="text" id="DPI" placeholder="DPI" required>
+        <input type="text" id="Extendidoen" placeholder="Extendido en" required>
+        <input type="text" id="Apellidos" placeholder="Apellidos" required>
+        <input type="text" id="Nombres" placeholder="Nombres" required>
+        <input type="text" id="Dirección" placeholder="Dirección" required>
+        <input type="text" id="Teléfono" placeholder="Teléfono" required>
+        <input type="text" id="Nit" placeholder="Nit" required>
+        <input type="date" id="FechaNacimiento" placeholder="Fecha de Nacimiento" required>
+        <input type="number" id="Edad" placeholder="Edad" required>
+        <input type="text" id="Nacionalidad" placeholder="Nacionalidad" required>
+        <input type="text" id="EstadoCivil" placeholder="Estado Civil" required>
+        <input type="number" id="Dependientes" placeholder="Dependientes" required>
+        <input type="text" id="Profesión" placeholder="Profesión" required>
+        <input type="text" id="Empresa" placeholder="Empresa" required>
+        <input type="text" id="TiempoTrabajo" placeholder="Tiempo de Trabajo" required>
+        <input type="number" id="Ingreso" placeholder="Ingreso" required>
+        <button type="submit">Agregar Cliente</button>
+    </form>
+
+    <h2>Lista de Clientes</h2>
+    <table id="clientesTable">
+        <thead>
+            <tr>
+                <th>DPI</th>
+                <th>Extendido en</th>
+                <th>Apellidos</th>
+                <th>Nombres</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Nit</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Edad</th>
+                <th>Nacionalidad</th>
+                <th>Estado Civil</th>
+                <th>Dependientes</th>
+                <th>Profesión</th>
+                <th>Empresa</th>
+                <th>Tiempo de Trabajo</th>
+                <th>Ingreso</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Clientes serán listados aquí -->
+        </tbody>
+    </table>
+
+    <script src="clientes.js"></script>
+</body>
+</html>
+
+

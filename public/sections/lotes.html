@@ -1,0 +1,34 @@
+<!-- lotes.html -->
+<section id="lots">
+    <h2>Lotes</h2>
+    <button id="showAddLotForm">Agregar Lote</button>
+    <form id="addLotForm" style="display: none;">
+        <label for="lotNumber">Número de Lote</label>
+        <input type="text" id="lotNumber" name="lotNumber" required>
+        <label for="lotSize">Medidas</label>
+        <input type="text" id="lotSize" name="lotSize" required>
+        <label for="lotArea">Área (m²)</label>
+        <input type="number" id="lotArea" name="lotArea" required>
+        <label for="lotPrice">Precio</label>
+        <input type="number" id="lotPrice" name="lotPrice" required>
+        <label for="downPayment">Enganche</label>
+        <input type="number" id="downPayment" name="downPayment" required>
+        <button><i class="fas fa-plus"></i> Agregar Lote</button>
+
+    </form>
+    <table id="lotsTable">
+        <thead>
+            <tr>
+                <th>Número de Lote</th>
+                <th>Medidas</th>
+                <th>Área (m²)</th>
+                <th>Precio</th>
+                <th>Enganche</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</section>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Créditos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <section id="calculator">
+        <h2>Calculadora de Créditos</h2>
+        <button id="newQuoteBtn"><i class="fas fa-plus"></i> Nueva Cotización</button>
+        
+        <!-- Selector de tipo de pago -->
+        <div id="paymentTypeSelector" style="display: none;">
+            <button id="contadoBtn">Pago al Contado</button>
+            <button id="plazosBtn">Pago a Plazos</button>
+        </div>
+
+        <!-- Formulario para pago al contado -->
+        <form id="contadoForm" style="display: none;">
+            <label for="contadoPrice">Precio</label>
+            <input type="number" id="contadoPrice" name="price" required>
+            <button type="submit"><i class="fas fa-calculator"></i> Calcular</button>
+        </form>
+
+        <!-- Formulario para pago a plazos -->
+        <form id="plazosForm" style="display: none;">
+            <label for="price">Precio</label>
+            <input type="number" id="price" name="price" required>
+            <label for="downPayment">Pago Inicial</label>
+            <input type="number" id="downPayment" name="downPayment" required>
+            <label for="annualRate">Tasa de Interés Anual (%)</label>
+            <input type="number" id="annualRate" name="annualRate" required>
+            <label for="months">Meses</label>
+            <input type="number" id="months" name="months" required>
+            <label for="purchaseDate">Fecha de Compra</label>
+            <input type="date" id="purchaseDate" name="purchaseDate" required>
+            <button type="submit"><i class="fas fa-calculator"></i> Calcular</button>
+        </form>
+
+        <div class="table-container">
+            <table id="amortizationTable" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Número de Cuota</th>
+                        <th>Saldo Inicial</th>
+                        <th>Cuota Mensual</th>
+                        <th>Abono a Capital</th>
+                        <th>Intereses</th>
+                        <th>Saldo Final</th>
+                        <th>Fecha de Compra</th>
+                        <th>Fecha de Pago</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script src="app.js"></script>
+    <script src="calculadora.js"></script>
+</body>
+</html>
