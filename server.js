@@ -14,6 +14,8 @@ const lotRoutes = require('./routes/lotRoutes');
 const clienteRoutes = require('./routes/clienteRoutes'); // Nueva ruta para clientes
 
 dotenv.config();
+
+// Conectar a la base de datos
 connectDB();
 
 const app = express();
@@ -66,14 +68,4 @@ app.use(errorHandler);
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
-});
-
-// Conexión a la base de datos directamente en server.js
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
-    console.log('MongoDB connected');
-}).catch(error => {
-    console.error('MongoDB connection error:', error);
 });
